@@ -5,9 +5,6 @@
     font-family: 'Playfair Display', serif;
     color: red;
 }
-.header{
-    color: red;
-}
 .center_name{
     letter-spacing: 5px;
     font-size: 20px;
@@ -15,6 +12,7 @@
 }
 .flex{
     display: flex;
+    flex-wrap: wrap;
     /* align-items: center; */
 }
 .align_center{
@@ -30,8 +28,12 @@ ul li{
     margin: 15px 5px;
 }
 .fixed_section{
+    position: sticky;
+    top: 0;
+    left: 0;
     background-color: black;
     padding: 0px 25px;
+    color: red;
 }
 .text_center{
     text-align: center;
@@ -73,10 +75,21 @@ ul li a:hover{
     color: black;
     box-shadow: 0 0 15px red;
 }
-.header{
-    position: sticky;
-    top: 0;
-    left: 0;
+.heart{
+    animation-name: heart;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:both;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes heart{
+    from{
+        scale: 1.0;
+    }
+    to{
+        scale: 1.5;
+    }
 }
 body{
     height: 100vh;
@@ -88,4 +101,19 @@ body{
 .footer p{
     font-size: 18px;
     padding: 5px 0px;
+}
+@media only screen and (max-width:1100px){
+    .intro_takla img{
+        height: 350px;
+    }
+    .heart{
+        display: block;
+        margin: auto;
+    }
+    .center_name p{
+        letter-spacing: 1.5px;
+    }
+    ul .flex_center li a{
+        letter-spacing: 0.5px;
+    }
 }
